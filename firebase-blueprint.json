@@ -1,0 +1,91 @@
+{
+  "entities": {
+    "User": {
+      "title": "User Profile",
+      "description": "Store user specific data and preferences.",
+      "type": "object",
+      "properties": {
+        "uid": { "type": "string" },
+        "email": { "type": "string" },
+        "displayName": { "type": "string" },
+        "photoURL": { "type": "string" },
+        "role": { "type": "string", "enum": ["couple", "vendor"] }
+      },
+      "required": ["uid", "email", "role"]
+    },
+    "Provider": {
+      "title": "Vendor/Provider",
+      "description": "Wedding service providers like photographers, catering, etc.",
+      "type": "object",
+      "properties": {
+        "userId": { "type": "string" },
+        "name": { "type": "string" },
+        "category": { "type": "string" },
+        "location": { "type": "string" },
+        "phone": { "type": "string" },
+        "rating": { "type": "number" },
+        "reviews": { "type": "number" },
+        "imageUrl": { "type": "string" },
+        "gallery": { "type": "array" },
+        "packages": { "type": "array" },
+        "isPremium": { "type": "boolean" },
+        "description": { "type": "string" },
+        "testimonials": { "type": "array" }
+      },
+      "required": ["name", "category", "location", "userId"]
+    },
+    "Wedding": {
+      "title": "Wedding Project",
+      "description": "Planning data for a couple's wedding.",
+      "type": "object",
+      "properties": {
+        "ownerId": { "type": "string" },
+        "date": { "type": "string", "format": "date-time" },
+        "location": { "type": "string" },
+        "budget": { "type": "number" },
+        "spent": { "type": "number" },
+        "status": { "type": "string", "enum": ["planning", "finalized", "completed"] },
+        "religion": { "type": "string" },
+        "weddingColor": { "type": "string" },
+        "updatedAt": { "type": "string", "format": "date-time" }
+      },
+      "required": ["ownerId", "status"]
+    },
+    "Message": {
+      "title": "Message",
+      "description": "Messages between couples and vendors.",
+      "type": "object",
+      "properties": {
+        "senderId": { "type": "string" },
+        "receiverId": { "type": "string" },
+        "content": { "type": "string" },
+        "timestamp": { "type": "string", "format": "date-time" },
+        "read": { "type": "boolean" },
+        "relatedProviderId": { "type": "string" }
+      },
+      "required": ["senderId", "receiverId", "content"]
+    }
+  },
+  "firestore": {
+    "/users/{userId}": {
+      "schema": "User",
+      "description": "User profiles restricted to the owner."
+    },
+    "/providers/{providerId}": {
+      "schema": "Provider",
+      "description": "Publicly readable vendor profiles."
+    },
+    "/spaces/{spaceId}": {
+      "schema": "Space",
+      "description": "Publicly readable wedding venue profiles."
+    },
+    "/weddings/{weddingId}": {
+      "schema": "Wedding",
+      "description": "Private wedding planning documents."
+    },
+    "/messages/{messageId}": {
+      "schema": "Message",
+      "description": "Private messages."
+    }
+  }
+}
