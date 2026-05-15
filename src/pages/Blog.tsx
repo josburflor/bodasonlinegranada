@@ -1,12 +1,13 @@
 import { useState } from 'react';
 import { motion } from 'framer-motion';
 import { Search, ChevronRight, Clock, User, Calendar } from 'lucide-react';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import { BLOG_POSTS, BlogPost } from '../data/blogPosts';
 
 export default function Blog() {
   const [searchTerm, setSearchTerm] = useState('');
   const [selectedCategory, setSelectedCategory] = useState<string | null>(null);
+  const navigate = useNavigate();
 
   const categories = Array.from(new Set(BLOG_POSTS.map(post => post.category)));
 
@@ -20,7 +21,7 @@ export default function Blog() {
   return (
     <div className="min-h-screen bg-white pb-32">
       {/* Immersive Cinematic Blog Hero */}
-      <section className="relative h-[85vh] w-full flex items-start justify-center overflow-hidden mb-24 pt-64">
+      <section className="relative h-[85vh] w-full flex items-start justify-center overflow-hidden mb-24 pt-56">
         <div className="absolute inset-0">
           <img 
             src="https://images.unsplash.com/photo-1519741497674-611481863552?auto=format&fit=crop&q=80&w=2000" 
@@ -28,10 +29,9 @@ export default function Blog() {
             className="w-full h-full object-cover scale-105"
             referrerPolicy="no-referrer"
           />
-          <div className="absolute inset-0 bg-slate-900/30 backdrop-blur-[1px]" />
-          <div className="absolute inset-0 bg-linear-to-b from-transparent via-transparent to-white" />
+          <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/30 to-transparent" />
         </div>
-
+        
         <div className="relative z-10 w-full flex flex-col items-center justify-center text-center px-6">
           <motion.span 
             initial={{ opacity: 0, y: 30 }}
@@ -93,7 +93,8 @@ export default function Blog() {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: index * 0.1 }}
-              className="bg-white rounded-[40px] shadow-xl shadow-gray-200/50 overflow-hidden border border-gray-50 group hover:scale-[1.02] transition-all flex flex-col h-full"
+              onClick={() => navigate(`/blog/${post.id}`)}
+              className="bg-white rounded-[40px] shadow-xl shadow-gray-200/50 overflow-hidden border border-gray-50 group hover:scale-[1.02] transition-all flex flex-col h-full cursor-pointer"
             >
               <div className="relative h-60 overflow-hidden bg-slate-100">
                 <img src={post.image} alt={post.title} className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" />

@@ -26,9 +26,9 @@ export default function BlogPost() {
       {/* Hero Header */}
       <div className="relative h-[70vh] w-full">
         <img src={post.image} alt={post.title} className="w-full h-full object-cover" />
-        <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent" />
+        <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/40 to-transparent" />
         
-        <div className="absolute top-64 left-0 right-0 p-6 z-10">
+        <div className="absolute top-32 md:top-48 left-0 right-0 p-6 md:p-12 z-10">
           <div className="max-w-4xl mx-auto">
             <button 
               onClick={() => navigate('/blog')}

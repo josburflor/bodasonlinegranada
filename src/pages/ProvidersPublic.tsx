@@ -85,7 +85,7 @@ export default function ProvidersPublic() {
   return (
     <div className="min-h-screen bg-white pb-20">
       {/* High-End Modern Hero Section */}
-      <section className="relative h-[85vh] w-full flex items-start justify-center overflow-hidden pt-64">
+      <section className="relative h-[90vh] w-full flex items-start justify-center overflow-hidden pt-56">
         <div className="absolute inset-0">
           <img 
             src="https://images.unsplash.com/photo-1511795409834-ef04bbd61622?auto=format&fit=crop&q=80&w=2000" 
@@ -94,7 +94,7 @@ export default function ProvidersPublic() {
             referrerPolicy="no-referrer"
           />
           <div className="absolute inset-0 bg-white/30 backdrop-blur-[1px]" />
-          <div className="absolute inset-0 bg-linear-to-b from-transparent via-white/10 to-white" />
+          <div className="absolute inset-0 bg-linear-to-b from-transparent via-black/10 to-white" />
         </div>
         
         <div className="max-w-7xl mx-auto px-6 relative z-10 text-center">

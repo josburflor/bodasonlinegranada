@@ -20,7 +20,7 @@ export default function Contact() {
   return (
     <div className="min-h-screen bg-white">
       {/* Immersive Cinematic Contact Hero */}
-      <section className="relative h-[80vh] w-full flex items-start justify-center overflow-hidden pt-64">
+      <section className="relative h-[90vh] w-full flex items-start justify-center overflow-hidden pt-56">
         <div className="absolute inset-0">
           <img 
             src="https://images.unsplash.com/photo-1517457373958-b7bdd4587205?auto=format&fit=crop&q=80&w=2000" 
@@ -29,7 +29,7 @@ export default function Contact() {
             referrerPolicy="no-referrer"
           />
           <div className="absolute inset-0 bg-white/40 backdrop-blur-[2px]" />
-          <div className="absolute inset-0 bg-linear-to-b from-transparent via-white/20 to-white" />
+          <div className="absolute inset-0 bg-linear-to-b from-transparent via-black/10 to-white" />
         </div>
         
         <div className="relative z-10 text-center px-6 max-w-5xl">

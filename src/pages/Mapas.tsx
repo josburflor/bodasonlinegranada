@@ -17,7 +17,7 @@ export default function Mapas() {
   return (
     <div className="min-h-screen bg-white pb-20">
       {/* Seamless Modern Hero Section */}
-      <section className="relative h-[100vh] w-full flex items-start justify-center overflow-hidden pt-80">
+      <section className="relative h-[100vh] w-full flex items-start justify-center overflow-hidden pt-64">
         <div className="absolute inset-0">
           <img 
             src="https://images.unsplash.com/photo-1520854221256-17451cc331bf?auto=format&fit=crop&q=80&w=2000" 
@@ -26,7 +26,7 @@ export default function Mapas() {
           />
           {/* Elegant Gradient Overlay */}
           <div className="absolute inset-0 bg-slate-900/10 backdrop-blur-[1px]" />
-          <div className="absolute inset-0 bg-linear-to-b from-transparent via-transparent to-white" />
+          <div className="absolute inset-0 bg-linear-to-b from-transparent via-black/10 to-white" />
         </div>
         
         <div className="max-w-7xl mx-auto px-6 relative z-10 text-center">

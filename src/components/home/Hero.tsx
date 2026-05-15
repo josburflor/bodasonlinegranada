@@ -22,7 +22,7 @@ export default function Hero() {
         <div className="absolute inset-0 bg-linear-to-b from-transparent via-white/40 to-white" />
       </div>
 
-      <div className="max-w-7xl mx-auto w-full grid lg:grid-cols-2 gap-16 items-start px-6 relative z-10 pt-64">
+      <div className="max-w-7xl mx-auto w-full grid lg:grid-cols-2 gap-16 items-start px-6 relative z-10 pt-48 md:pt-56">
         {/* Text Content */}
         <div className="space-y-12">
           <motion.div

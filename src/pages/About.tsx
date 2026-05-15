@@ -33,7 +33,7 @@ export default function About() {
   return (
     <div className="min-h-screen bg-white">
       {/* Immersive Modern Hero Section */}
-      <section className="relative h-[100vh] w-full flex items-start justify-center overflow-hidden pt-64">
+      <section className="relative h-[100vh] w-full flex items-start justify-center overflow-hidden pt-56">
         <div className="absolute inset-0">
           <img 
             src="/assets/images/unsplash-photo-1519741497674-611481863552.jpg" 
