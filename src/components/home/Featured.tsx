@@ -1,5 +1,6 @@
 import { SPACES, PROVIDERS } from '@/src/constants';
 import { Star, MapPin } from 'lucide-react';
+import { Link } from 'react-router-dom';
 
 export default function Featured() {
   return (
@@ -29,7 +30,7 @@ export default function Featured() {
         {/* Spaces Cards */}
         <div className="grid md:grid-cols-3 gap-8">
           {SPACES.map((space) => (
-            <div key={space.id} className="bg-white rounded-3xl overflow-hidden shadow-lg border border-gray-100 group hover:shadow-2xl transition-all">
+            <Link key={space.id} to="/mapas" className="bg-white rounded-3xl overflow-hidden shadow-lg border border-gray-100 group hover:shadow-2xl transition-all block">
               <div className="relative h-48 overflow-hidden">
                 <img
                   src={space.imageUrl}
@@ -40,11 +41,11 @@ export default function Featured() {
               <div className="p-6 space-y-3">
                 <h4 className="font-serif text-xl italic text-slate-800">{space.name}</h4>
                 <p className="text-gray-500 text-xs leading-relaxed">{space.description}</p>
-                <button className="text-[#FF4D6D] text-[10px] font-bold border border-[#FF4D6D] px-4 py-1.5 rounded-full hover:bg-pink-50 transition-colors">
+                <div className="text-[#FF4D6D] text-[10px] font-bold border border-[#FF4D6D] px-4 py-1.5 rounded-full group-hover:bg-pink-50 transition-colors inline-block">
                   Ver espacio
-                </button>
+                </div>
               </div>
-            </div>
+            </Link>
           ))}
         </div>
 
@@ -57,7 +58,7 @@ export default function Featured() {
 
           <div className="grid md:grid-cols-3 gap-8">
             {PROVIDERS.map((provider) => (
-              <div key={provider.id} className="relative rounded-3xl overflow-hidden shadow-xl aspect-[4/5] group">
+              <Link key={provider.id} to="/proveedores" className="relative rounded-3xl overflow-hidden shadow-xl aspect-[4/5] group block">
                 <img
                   src={provider.imageUrl}
                   alt={provider.name}
@@ -82,11 +83,11 @@ export default function Featured() {
                       <span>{provider.location}</span>
                     </div>
                   </div>
-                  <button className="w-full bg-[#FF4D6D] text-white text-xs font-bold py-3 rounded-full hover:bg-pink-600 transition-colors">
+                  <div className="w-full bg-[#FF4D6D] text-white text-xs font-bold py-3 rounded-full group-hover:bg-pink-600 transition-colors text-center">
                     Ver más
-                  </button>
+                  </div>
                 </div>
-              </div>
+              </Link>
             ))}
           </div>
         </div>

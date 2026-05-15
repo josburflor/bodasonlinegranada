@@ -88,52 +88,53 @@ export default function Blog() {
         {/* Posts Grid */}
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-10">
           {filteredPosts.map((post, index) => (
-            <motion.article 
+            <motion.div 
               key={post.id}
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: index * 0.1 }}
-              onClick={() => navigate(`/blog/${post.id}`)}
-              className="bg-white rounded-[40px] shadow-xl shadow-gray-200/50 overflow-hidden border border-gray-50 group hover:scale-[1.02] transition-all flex flex-col h-full cursor-pointer"
+              className="flex flex-col h-full"
             >
-              <div className="relative h-60 overflow-hidden bg-slate-100">
-                <img src={post.image} alt={post.title} className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" />
-                <div className="absolute top-6 left-6">
-                  <span className="bg-white/90 backdrop-blur px-4 py-1.5 rounded-full text-[10px] font-black text-[#FF4D6D] uppercase tracking-widest shadow-lg">
-                    {post.category}
-                  </span>
-                </div>
-              </div>
-              
-              <div className="p-10 flex-1 flex flex-col">
-                <div className="flex gap-4 mb-4 text-[10px] font-black text-gray-300 uppercase tracking-widest">
-                  <div className="flex items-center gap-1"><Calendar size={12} /> {new Date(post.date).toLocaleDateString()}</div>
-                  <div className="flex items-center gap-1"><Clock size={12} /> {post.readTime}</div>
+              <Link 
+                to={`/blog/${post.id}`}
+                className="bg-white rounded-[40px] shadow-xl shadow-gray-200/50 overflow-hidden border border-gray-50 group hover:scale-[1.02] transition-all flex flex-col h-full cursor-pointer"
+              >
+                <div className="relative h-60 overflow-hidden bg-slate-100">
+                  <img src={post.image} alt={post.title} className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" />
+                  <div className="absolute top-6 left-6">
+                    <span className="bg-white/90 backdrop-blur px-4 py-1.5 rounded-full text-[10px] font-black text-[#FF4D6D] uppercase tracking-widest shadow-lg">
+                      {post.category}
+                    </span>
+                  </div>
                 </div>
                 
-                <h2 className="text-2xl font-serif italic text-slate-800 mb-4 group-hover:text-[#FF4D6D] transition-colors line-clamp-2 leading-tight">
-                  {post.title}
-                </h2>
-                <p className="text-gray-500 text-sm mb-8 line-clamp-3 font-medium">
-                  {post.excerpt}
-                </p>
-
-                <div className="mt-auto pt-8 border-t border-gray-50 flex items-center justify-between">
-                  <div className="flex items-center gap-2">
-                    <div className="w-8 h-8 bg-gray-100 rounded-full flex items-center justify-center text-[#1A365D]">
-                      <User size={14} />
-                    </div>
-                    <span className="text-[10px] font-black text-[#1A365D] uppercase tracking-wider">{post.author}</span>
+                <div className="p-10 flex-1 flex flex-col">
+                  <div className="flex gap-4 mb-4 text-[10px] font-black text-gray-300 uppercase tracking-widest">
+                    <div className="flex items-center gap-1"><Calendar size={12} /> {new Date(post.date).toLocaleDateString()}</div>
+                    <div className="flex items-center gap-1"><Clock size={12} /> {post.readTime}</div>
                   </div>
-                  <Link 
-                    to={`/blog/${post.id}`}
-                    className="w-10 h-10 bg-gray-50 rounded-full flex items-center justify-center text-[#1A365D] hover:bg-[#FF4D6D] hover:text-white transition-all group/btn shadow-inner"
-                  >
-                    <ChevronRight size={20} />
-                  </Link>
+                  
+                  <h2 className="text-2xl font-serif italic text-slate-800 mb-4 group-hover:text-[#FF4D6D] transition-colors line-clamp-2 leading-tight">
+                    {post.title}
+                  </h2>
+                  <p className="text-gray-500 text-sm mb-8 line-clamp-3 font-medium">
+                    {post.excerpt}
+                  </p>
+
+                  <div className="mt-auto pt-8 border-t border-gray-50 flex items-center justify-between">
+                    <div className="flex items-center gap-2">
+                      <div className="w-8 h-8 bg-gray-100 rounded-full flex items-center justify-center text-[#1A365D]">
+                        <User size={14} />
+                      </div>
+                      <span className="text-[10px] font-black text-[#1A365D] uppercase tracking-wider">{post.author}</span>
+                    </div>
+                    <div className="w-10 h-10 bg-gray-50 rounded-full flex items-center justify-center text-[#1A365D] group-hover:bg-[#FF4D6D] group-hover:text-white transition-all shadow-inner">
+                      <ChevronRight size={20} />
+                    </div>
+                  </div>
                 </div>
-              </div>
-            </motion.article>
+              </Link>
+            </motion.div>
           ))}
         </div>
 

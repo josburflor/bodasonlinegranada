@@ -24,7 +24,7 @@ export default function Blog() {
 
         <div className="grid md:grid-cols-3 gap-10">
           {BLOG_POSTS.slice(0, 3).map((post) => (
-            <Link key={post.id} to={`/blog/${post.id}`} className="group">
+            <Link key={post.id} to={`/blog/${post.id}`} className="group block">
               <div className="relative aspect-[4/5] rounded-[40px] overflow-hidden shadow-2xl mb-8 bg-slate-200">
                 <img
                   src={post.image}
