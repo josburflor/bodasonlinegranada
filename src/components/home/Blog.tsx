@@ -6,10 +6,10 @@ export default function Blog() {
   return (
     <section className="py-24 bg-slate-50">
       <div className="max-w-7xl mx-auto px-6">
-        <div className="flex justify-between items-end mb-12">
+        <div className="flex flex-col md:flex-row justify-between items-start md:items-end mb-10 md:mb-12 gap-6 md:gap-0">
           <div>
-            <span className="text-[#FF4D6D] font-black text-[10px] uppercase tracking-[0.2em] mb-4 block">Inspiración</span>
-            <h2 className="text-4xl md:text-5xl font-serif text-slate-800 italic">Blog al Día</h2>
+            <span className="text-[#FF4D6D] font-black text-[10px] uppercase tracking-[0.2em] mb-3 md:mb-4 block">Inspiración</span>
+            <h2 className="text-3xl md:text-5xl font-serif text-slate-800 italic leading-tight">Blog al Día</h2>
           </div>
           <Link 
             to="/blog" 

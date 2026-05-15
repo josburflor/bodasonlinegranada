@@ -21,16 +21,16 @@ export default function Categories() {
       </div>
 
       <div className="max-w-7xl mx-auto px-6 relative z-10">
-        <div className="flex flex-col lg:flex-row items-center lg:items-end justify-between mb-28 gap-16">
+        <div className="flex flex-col lg:flex-row items-center lg:items-end justify-between mb-16 md:mb-28 gap-10 md:gap-16">
           <div className="text-center lg:text-left">
             <motion.div
               initial={{ opacity: 0, x: -20 }}
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true }}
-              className="flex items-center justify-center lg:justify-start gap-4 mb-8"
+              className="flex items-center justify-center lg:justify-start gap-4 mb-6 md:mb-8"
             >
               <span className="w-12 h-1 bg-[#FF4D6D] rounded-full" />
-              <span className="text-[#FF4D6D] font-black text-[12px] uppercase tracking-[0.5em] leading-none">Wedding Planner</span>
+              <span className="text-[#FF4D6D] font-black text-[10px] md:text-[12px] uppercase tracking-[0.5em] leading-none">Wedding Planner</span>
             </motion.div>
             
             <motion.h2 
@@ -38,7 +38,7 @@ export default function Categories() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
-              className="text-6xl md:text-8xl font-serif font-light text-slate-900 leading-[1.1] mb-4"
+              className="text-5xl md:text-8xl font-serif font-light text-slate-900 leading-[1.1] mb-4"
             >
               Disfruta <br />
               <span className="italic text-[#FF4D6D]">Organizando</span> <br />
@@ -50,14 +50,14 @@ export default function Categories() {
             initial={{ opacity: 0, scale: 0.8 }}
             whileInView={{ opacity: 1, scale: 1 }}
             viewport={{ once: true }}
-            className="shrink-0"
+            className="shrink-0 w-full lg:w-auto"
           >
             <Link 
               to="/proveedores"
-              className="group relative flex items-center justify-center gap-8 bg-[#1A365D] text-white px-16 py-10 rounded-[40px] font-black uppercase text-[14px] tracking-[0.3em] overflow-hidden transition-all hover:bg-[#FF4D6D] shadow-[0_30px_60px_-15px_rgba(26,54,93,0.3)] hover:shadow-[#FF4D6D]/40 active:scale-95"
+              className="group relative flex items-center justify-center gap-6 md:gap-8 bg-[#1A365D] text-white px-10 md:px-16 py-6 md:py-10 rounded-[30px] md:rounded-[40px] font-black uppercase text-[12px] md:text-[14px] tracking-[0.3em] overflow-hidden transition-all hover:bg-[#FF4D6D] shadow-[0_30px_60px_-15px_rgba(26,54,93,0.3)] hover:shadow-[#FF4D6D]/40 active:scale-95"
             >
               <span className="relative z-10">Directorio VIP</span>
-              <ArrowRight size={24} className="relative z-10 group-hover:translate-x-3 transition-transform duration-500" />
+              <ArrowRight size={20} md:size={24} className="relative z-10 group-hover:translate-x-3 transition-transform duration-500" />
               <div className="absolute inset-0 bg-gradient-to-r from-white/0 via-white/10 to-white/0 -translate-x-full group-hover:translate-x-full transition-transform duration-1000" />
             </Link>
           </motion.div>

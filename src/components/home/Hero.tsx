@@ -22,13 +22,13 @@ export default function Hero() {
         <div className="absolute inset-0 bg-linear-to-b from-transparent via-white/40 to-white" />
       </div>
 
-      <div className="max-w-7xl mx-auto w-full grid lg:grid-cols-2 gap-16 items-start px-6 relative z-10 pt-48 md:pt-56">
+      <div className="max-w-7xl mx-auto w-full grid lg:grid-cols-2 gap-8 lg:gap-16 items-start px-6 relative z-10 pt-32 md:pt-56">
         {/* Text Content */}
-        <div className="space-y-12">
+        <div className="space-y-8 md:space-y-12">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
-            className="inline-flex items-center gap-3 px-6 py-2 rounded-full bg-slate-900 text-white text-[10px] font-black uppercase tracking-[0.5em] shadow-2xl"
+            className="inline-flex items-center gap-3 px-6 py-2 rounded-full bg-slate-900 text-white text-[9px] md:text-[10px] font-black uppercase tracking-[0.5em] shadow-2xl"
           >
             <Sparkles size={14} className="text-[#FF4D6D] animate-pulse" />
             <span>Guía Exclusiva • Granada</span>
@@ -38,13 +38,13 @@ export default function Hero() {
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.2 }}
-            className="space-y-6"
+            className="space-y-4 md:space-y-6"
           >
-            <h1 className="text-7xl md:text-[140px] font-serif font-light text-slate-900 leading-[0.8] tracking-tighter">
+            <h1 className="text-6xl sm:text-7xl md:text-[140px] font-serif font-light text-slate-900 leading-[0.9] md:leading-[0.8] tracking-tighter">
               Boda de <br />
               <span className="italic text-[#FF4D6D]">Ensueño</span>
             </h1>
-            <p className="text-xl text-slate-500 max-w-lg leading-relaxed font-light italic">
+            <p className="text-lg md:text-xl text-slate-500 max-w-lg leading-relaxed font-light italic">
               "Donde el lujo andaluz se encuentra con la perfección técnica para crear vuestro momento eterno."
             </p>
           </motion.div>
@@ -56,38 +56,38 @@ export default function Hero() {
             transition={{ delay: 0.4 }}
             className="w-full max-w-2xl"
           >
-            <div className="bg-white p-4 rounded-[40px] shadow-2xl flex flex-col md:flex-row gap-4 border border-slate-100">
+            <div className="bg-white p-3 md:p-4 rounded-[30px] md:rounded-[40px] shadow-2xl flex flex-col gap-3 md:gap-4 border border-slate-100">
               <div className="flex-1 relative">
-                <Search className="absolute left-6 top-1/2 -translate-y-1/2 text-[#FF4D6D]" size={20} />
+                <Search className="absolute left-6 top-1/2 -translate-y-1/2 text-[#FF4D6D]" size={18} md:size={20} />
                 <input 
                   type="text" 
-                  placeholder="¿Qué buscas? (Banquetes, DJ...)"
-                  className="w-full pl-16 pr-6 py-6 bg-slate-50 rounded-[30px] border-none outline-none text-sm font-bold text-slate-800 placeholder:text-slate-400 focus:ring-4 focus:ring-[#FF4D6D]/5 transition-all"
+                  placeholder="¿Qué buscas? (Banquetes...)"
+                  className="w-full pl-14 md:pl-16 pr-6 py-4 md:py-6 bg-slate-50 rounded-[20px] md:rounded-[30px] border-none outline-none text-sm font-bold text-slate-800 placeholder:text-slate-400 focus:ring-4 focus:ring-[#FF4D6D]/5 transition-all"
                 />
               </div>
               <div className="flex-1 relative">
-                <MapPin className="absolute left-6 top-1/2 -translate-y-1/2 text-[#FF4D6D]" size={20} />
+                <MapPin className="absolute left-6 top-1/2 -translate-y-1/2 text-[#FF4D6D]" size={18} md:size={20} />
                 <input 
                   type="text" 
-                  placeholder="¿Dónde? (Granada, Motril...)"
-                  className="w-full pl-16 pr-6 py-6 bg-slate-50 rounded-[30px] border-none outline-none text-sm font-bold text-slate-800 placeholder:text-slate-400 focus:ring-4 focus:ring-[#FF4D6D]/5 transition-all"
+                  placeholder="¿Dónde? (Granada...)"
+                  className="w-full pl-14 md:pl-16 pr-6 py-4 md:py-6 bg-slate-50 rounded-[20px] md:rounded-[30px] border-none outline-none text-sm font-bold text-slate-800 placeholder:text-slate-400 focus:ring-4 focus:ring-[#FF4D6D]/5 transition-all"
                 />
               </div>
               <button 
                 onClick={() => navigate('/proveedores')}
-                className="bg-[#FF4D6D] text-white px-10 py-6 rounded-[30px] font-black text-xs uppercase tracking-widest hover:scale-105 active:scale-95 transition-all shadow-xl shadow-[#FF4D6D]/20"
+                className="bg-[#FF4D6D] text-white px-10 py-4 md:py-6 rounded-[20px] md:rounded-[30px] font-black text-xs uppercase tracking-widest hover:scale-105 active:scale-95 transition-all shadow-xl shadow-[#FF4D6D]/20"
               >
                 Buscar
               </button>
             </div>
 
             {/* Quick Categories */}
-            <div className="flex flex-wrap gap-4 mt-8">
+            <div className="flex flex-wrap gap-2 md:gap-4 mt-6 md:mt-8">
               {['Banquetes', 'Fotografía', 'Música', 'Decoración', 'Vestidos'].map((cat) => (
                 <button 
                   key={cat}
                   onClick={() => navigate('/proveedores')}
-                  className="px-6 py-2 bg-white/50 backdrop-blur-md rounded-full border border-slate-200 text-[10px] font-black uppercase tracking-widest text-slate-500 hover:bg-[#FF4D6D] hover:text-white hover:border-[#FF4D6D] transition-all"
+                  className="px-4 md:px-6 py-2 bg-white/50 backdrop-blur-md rounded-full border border-slate-200 text-[9px] md:text-[10px] font-black uppercase tracking-widest text-slate-500 hover:bg-[#FF4D6D] hover:text-white hover:border-[#FF4D6D] transition-all"
                 >
                   {cat}
                 </button>
@@ -97,7 +97,7 @@ export default function Hero() {
         </div>
 
         {/* Seamless Visual Side */}
-        <div className="relative aspect-[4/5] lg:aspect-auto h-full min-h-[600px]">
+        <div className="relative aspect-[4/5] lg:aspect-auto h-full min-h-[400px] md:min-h-[600px] mt-8 lg:mt-0">
           <motion.div
             initial={{ opacity: 0, scale: 0.9 }}
             animate={{ opacity: 1, scale: 1 }}
@@ -105,7 +105,7 @@ export default function Hero() {
             className="w-full h-full relative"
           >
             {/* Main Immersive Cutout */}
-            <div className="absolute inset-0 rounded-[100px] overflow-hidden shadow-2xl border-[16px] border-white shadow-[#FF4D6D]/10">
+            <div className="absolute inset-0 rounded-[60px] md:rounded-[100px] overflow-hidden shadow-2xl border-[8px] md:border-[16px] border-white shadow-[#FF4D6D]/10">
               <img
                 src="https://images.unsplash.com/photo-1515934751635-c81c6bc9a2d8?auto=format&fit=crop&q=80&w=2000"
                 alt="Pareja de Enamorados"
